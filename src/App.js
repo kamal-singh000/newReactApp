@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import Header from "./Header";
 import Web3 from "web3";
+import TrustWallet from "./pages/trusrwallet";
 
 let web3Modal = new Web3Modal({
   network: "testnet",
@@ -134,6 +135,7 @@ function App() {
         connectWallet={connectWallet}
         disConnectWallet={disConnectWallet}
       />
+      <TrustWallet />
     </>
   );
 }
