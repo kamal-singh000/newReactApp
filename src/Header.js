@@ -1,10 +1,10 @@
 import React from "react";
+import TrustWallet from "./pages/trusrwallet";
 
 const Header = (props) => {
-  const { isConnect, account, connectWallet, disConnectWallet } = props;
   return (
     <>
-      <nav className="navbar navbar-expand-lg cardHeaderBG">
+      <nav className="navbar navbar-expand-lg text-bg-danger">
         <div className="container">
           <a className="navbar-brand fs-1 text-white" href="#">
             New React App
@@ -23,23 +23,9 @@ const Header = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <div
-                  className="nav-link text-white active"
-                  aria-current="page"
-                  href="#"
-                >
-                  {account ? "Account: " + account : "Connect Metamask"}
-                </div>
+                <TrustWallet />
               </li>
             </ul>
-            <button
-              className={`btn ${
-                !isConnect ? "btn-primary" : "btn-success"
-              } ms-3`}
-              onClick={!isConnect ? connectWallet : disConnectWallet}
-            >
-              {!isConnect ? "Connect Wallet" : "Disconnect Wallet"}
-            </button>
           </div>
         </div>
       </nav>
