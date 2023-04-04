@@ -16,7 +16,7 @@ function HomePage() {
     console.log(couponContractInstance);
     console.log("address", address);
     await couponContractInstance.methods
-      .createGiftCoupon(web3.utils.toWei(cost), validity, title, noOfCoupon)
+      .createGiftCoupon(cost, validity, title, noOfCoupon)
       .send({ from: address })
       .on("transactionHash", (hash) => {
         console.log("transaction hash : ", hash);
