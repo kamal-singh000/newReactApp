@@ -8,6 +8,7 @@ import MainLayout from "./components/MainLayout";
 import FungibleTokens from "./components/FungibleTokens";
 import MintReceipt from "./components/MintReceipt";
 import LaunchNFTReward from "./components/LaunchNFTReward";
+import ReedemCoupon from "./components/ReedemCoupon";
 let web3 = new Web3(Web3.givenProvider);
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Dashboard />
       <Routes>
         <Route exact path="/" element={<MainLayout />} />
+        <Route path="/redeemCoupon" element={<ReedemCoupon />} />
         <Route path="/launchNFTReward" element={<LaunchNFTReward />} />
         <Route path="/fungibleTokens" element={<FungibleTokens />} />
         <Route path="/mintReceipt" element={<MintReceipt />} />

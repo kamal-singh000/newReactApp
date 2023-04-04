@@ -8,15 +8,15 @@ const Dashboard = () => {
           color: isActive ? "greenyellow" : "white",
         })}
       >
-        Home
+        Create coupon
       </NavLink>
       <NavLink
-        to="/launchNFTReward"
+        to="/redeemCoupon"
         style={({ isActive }) => ({
           color: isActive ? "greenyellow" : "white",
         })}
       >
-        Launch NFT Reward
+        Redeem Coupon
       </NavLink>
       <NavLink
         to="/fungibleTokens"

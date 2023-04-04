@@ -31,7 +31,7 @@ function HomePage() {
   return (
     <>
       <Web3Button />
-      <div>
+      {/* <div>
         <h3>Create coupon</h3>
         <label for="cost">Cost</label>
         <input
@@ -68,7 +68,7 @@ function HomePage() {
           {" "}
           Create Coupon{" "}
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
