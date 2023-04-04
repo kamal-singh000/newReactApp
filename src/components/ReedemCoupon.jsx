@@ -4,7 +4,7 @@ import { getContractInstance } from "../helpers/functions";
 import { web3 } from "../web3";
 import { useAccount, useContract, useSigner } from "wagmi";
 const ReedemCoupon = () => {
-  const { address, isConnecting, isDisconnected } = useAccount();
+  const { address } = useAccount();
 
   const [couponCode, setCouponCode] = useState();
 
@@ -22,7 +22,7 @@ const ReedemCoupon = () => {
         console.log("on receipt ", receipt);
       })
       .on("error", (error) => {
-        console.log("on error ", error); // error.code===4001 user reject the metamask transaction
+        console.log("on error ", error);
       });
   };
   return (
