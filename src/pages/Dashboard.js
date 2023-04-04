@@ -34,6 +34,33 @@ const Dashboard = () => {
       >
         Mint Receipt
       </NavLink>
+      <li class="dropdown ">
+        <NavLink
+          class="nav-link text-danger dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Promotions
+        </NavLink>
+        <ul class="dropdown-menu">
+          <li>
+            <NavLink class="dropdown-item  text-danger">
+              Membership Program
+            </NavLink>
+          </li>
+          <li>
+            <NavLink class="dropdown-item  text-danger">Create Coupons</NavLink>
+          </li>
+          <li>
+            <NavLink class="dropdown-item  text-danger">
+              Start NavLink Raffle
+            </NavLink>
+          </li>
+          <li>
+            <NavLink class="dropdown-item  text-danger">Deploy Airdrop</NavLink>
+          </li>
+        </ul>
+      </li>
     </nav>
   );
 };

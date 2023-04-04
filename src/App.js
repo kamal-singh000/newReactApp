@@ -14,16 +14,13 @@ function App() {
   return (
     <>
       <Header />
-      {/* <div style={{ display: "flex" }}> */}
-      <div>
-        <Dashboard />
-        <Routes>
-          <Route exact path="/" element={<MainLayout />} />
-          <Route path="/launchNFTReward" element={<LaunchNFTReward />} />
-          <Route path="/fungibleTokens" element={<FungibleTokens />} />
-          <Route path="/mintReceipt" element={<MintReceipt />} />
-        </Routes>
-      </div>
+      <Dashboard />
+      <Routes>
+        <Route exact path="/" element={<MainLayout />} />
+        <Route path="/launchNFTReward" element={<LaunchNFTReward />} />
+        <Route path="/fungibleTokens" element={<FungibleTokens />} />
+        <Route path="/mintReceipt" element={<MintReceipt />} />
+      </Routes>
     </>
   );
 }
