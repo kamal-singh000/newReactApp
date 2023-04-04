@@ -33,7 +33,7 @@ const ReedemCoupon = () => {
         }}
       >
         <div>
-          <h3>Create coupon</h3>
+          <h3>Redeem coupon</h3>
           <div class="form-group">
             <label for="CouponCode">CouponCode:</label>
             <input
