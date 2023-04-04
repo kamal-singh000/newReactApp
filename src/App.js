@@ -14,7 +14,8 @@ function App() {
   return (
     <>
       <Header />
-      <div style={{ display: "flex" }}>
+      {/* <div style={{ display: "flex" }}> */}
+      <div>
         <Dashboard />
         <Routes>
           <Route exact path="/" element={<MainLayout />} />
