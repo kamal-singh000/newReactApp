@@ -25,8 +25,54 @@ const ReedemCoupon = () => {
         console.log("on error ", error);
       });
   };
+  const getGiftCoupon = async () => {
+    const couponContractInstance = await getContractInstance();
+    console.log(couponContractInstance);
+    console.log("address", address);
+    await couponContractInstance.methods
+      .getGiftCouponDetails(couponCode)
+      .send({ from: address })
+      .on("transactionHash", (hash) => {
+        console.log("transaction hash : ", hash);
+      })
+      .on("receipt", (receipt) => {
+        console.log("on receipt ", receipt);
+      })
+      .on("error", (error) => {
+        console.log("on error ", error);
+      });
+  };
   return (
     <>
+      <div
+        style={{
+          margin: "50px 200px auto 200px",
+        }}
+      >
+        <div>
+          <h3>GiftCoupon Deatails</h3>
+          <div class="form-group">
+            <label for="CouponCode">CouponCode:</label>
+            <input
+              class="form-control"
+              placeholder="Enter CouponCode"
+              id="CouponCode"
+              type={"text"}
+              name="cost"
+              onChange={(e) => setCouponCode(e.target.value)}
+            />
+          </div>
+          <br />
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={() => getGiftCoupon()}
+          >
+            {" "}
+            getGiftCoupon{" "}
+          </button>
+        </div>
+      </div>
       <div
         style={{
           margin: "50px 200px auto 200px",
