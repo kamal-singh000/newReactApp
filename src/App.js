@@ -5,18 +5,24 @@ import Web3 from "web3";
 import Dashboard from "./pages/Dashboard";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./components/MainLayout";
-
+import FungibleTokens from "./components/FungibleTokens";
+import MintReceipt from "./components/MintReceipt";
+import LaunchNFTReward from "./components/LaunchNFTReward";
 let web3 = new Web3(Web3.givenProvider);
 
 function App() {
   return (
     <>
       <Header />
-      <Dashboard />
-      <Routes>
-        <Route path="/Dashboard" element={<MainLayout />} />
-      </Routes>
-      {/* <TrustWallet /> */}
+      <div style={{ display: "flex" }}>
+        <Dashboard />
+        <Routes>
+          <Route exact path="/" element={<MainLayout />} />
+          <Route path="/launchNFTReward" element={<LaunchNFTReward />} />
+          <Route path="/fungibleTokens" element={<FungibleTokens />} />
+          <Route path="/mintReceipt" element={<MintReceipt />} />
+        </Routes>
+      </div>
     </>
   );
 }
