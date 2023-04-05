@@ -29,18 +29,20 @@ const ReedemCoupon = () => {
     const couponContractInstance = await getContractInstance();
     console.log(couponContractInstance);
     console.log("address", address);
-    await couponContractInstance.methods
+    let data = await couponContractInstance.methods
       .getGiftCouponDetails(couponCode)
-      .send({ from: address })
-      .on("transactionHash", (hash) => {
-        console.log("transaction hash : ", hash);
-      })
-      .on("receipt", (receipt) => {
-        console.log("on receipt ", receipt);
-      })
-      .on("error", (error) => {
-        console.log("on error ", error);
-      });
+      .call();
+    console.log("data", data);
+    //   .send({ from: address })
+    //   .on("transactionHash", (hash) => {
+    //     console.log("transaction hash : ", hash);
+    //   })
+    //   .on("receipt", (receipt) => {
+    //     console.log("on receipt ", receipt);
+    //   })
+    //   .on("error", (error) => {
+    //     console.log("on error ", error);
+    //   });
   };
   return (
     <>
