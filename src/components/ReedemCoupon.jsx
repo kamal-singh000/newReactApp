@@ -54,7 +54,7 @@ const ReedemCoupon = () => {
         }}
       >
         <div>
-          <h3>GiftCoupon Deatails</h3>
+          <h3>GiftCoupon Deatails:-</h3>
           <div class="form-group">
             <label for="CouponCode">CouponCode:</label>
             <input
@@ -77,13 +77,13 @@ const ReedemCoupon = () => {
           </button>
           <br />
           <br />
-          <table class="table table-sm">
+          <table class="table table-sm table-dark">
             <thead>
               <tr>
                 <th scope="col">title</th>
                 <th scope="col">Cost</th>
                 <th scope="col">Creator</th>
-                <th scope="col">Code</th>
+                <th scope="col">CouponCode</th>
                 <th scope="col">RedeemBy</th>
                 <th scope="col">Validity</th>
               </tr>
@@ -107,7 +107,7 @@ const ReedemCoupon = () => {
         }}
       >
         <div>
-          <h3>Redeem coupon</h3>
+          <h3>Redeem coupon:-</h3>
           <div class="form-group">
             <label for="CouponCode">CouponCode:</label>
             <input
