@@ -7,6 +7,7 @@ const ReedemCoupon = () => {
   const { address } = useAccount();
 
   const [couponCode, setCouponCode] = useState();
+  const [couponData, setCouponData] = useState([]);
 
   const redeemCoupon = async () => {
     const couponContractInstance = await getContractInstance();
@@ -32,7 +33,7 @@ const ReedemCoupon = () => {
     let data = await couponContractInstance.methods
       .getGiftCouponDetails(couponCode)
       .call();
-    console.log("data", data);
+    setCouponData(data);
     //   .send({ from: address })
     //   .on("transactionHash", (hash) => {
     //     console.log("transaction hash : ", hash);
@@ -44,6 +45,7 @@ const ReedemCoupon = () => {
     //     console.log("on error ", error);
     //   });
   };
+  console.log("data", couponData.creator);
   return (
     <>
       <div
@@ -73,6 +75,30 @@ const ReedemCoupon = () => {
             {" "}
             getGiftCoupon{" "}
           </button>
+          <br />
+          <br />
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">title</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Creator</th>
+                <th scope="col">Code</th>
+                <th scope="col">RedeemBy</th>
+                <th scope="col">Validity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{couponData.title}</td>
+                <td>{couponData.cost}</td>
+                <td>{couponData.creator}</td>
+                <td>{couponData.code}</td>
+                <td>{couponData.redeemedBy}</td>
+                <td>{couponData.validity}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <div
