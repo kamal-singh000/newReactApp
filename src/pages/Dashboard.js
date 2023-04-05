@@ -19,6 +19,14 @@ const Dashboard = () => {
         Redeem Coupon
       </NavLink>
       <NavLink
+        to="/getGiftCoupon"
+        style={({ isActive }) => ({
+          color: isActive ? "greenyellow" : "white",
+        })}
+      >
+        Get Gift Coupons
+      </NavLink>
+      <NavLink
         to="/fungibleTokens"
         style={({ isActive }) => ({
           color: isActive ? "greenyellow" : "white",
