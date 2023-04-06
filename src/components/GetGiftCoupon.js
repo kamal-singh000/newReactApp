@@ -89,7 +89,12 @@ const GetGiftCoupon = () => {
                 <p className="bg-secondary text-light px-3  m-0">
                   {getGiftCoupon?.title ? getGiftCoupon?.title : "No title"}
                 </p>
-                <p className="bg-light px-3  m-0">{getGiftCoupon?.cost}</p>
+                <p className="bg-light px-3  m-0">
+                  {getGiftCoupon?.cost
+                    ? web3.utils.fromWei(getGiftCoupon?.cost)
+                    : 0}{" "}
+                  MDT
+                </p>
                 <p className="bg-secondary text-light px-3  m-0">
                   {getGiftCoupon?.validity}
                 </p>
