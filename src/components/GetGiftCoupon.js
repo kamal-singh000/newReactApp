@@ -3,14 +3,31 @@ import { useState } from "react";
 import { getContractInstance } from "../helpers/functions";
 import { web3 } from "../web3";
 import { useAccount, useContract, useSigner } from "wagmi";
+import { useEffect } from "react";
 const GetGiftCoupon = () => {
   const { address } = useAccount();
 
   const [couponCode, setCouponCode] = useState();
   const [getGiftCoupon, setGetGiftCoupon] = useState(null);
+  const [giftCouponCodes, setGiftCouponCodes] = useState([]);
+  useEffect(() => {
+    const getGiftCouponCodesDetails = async () => {
+      if (address) {
+        const couponContractInstance = await getContractInstance();
+        let getGiftCouponCodes = await couponContractInstance.methods
+          .getGiftCouponCodes()
+          .call({ from: `${address}` });
+        console.log("getGiftCouponCodes", getGiftCouponCodes);
+        setGiftCouponCodes(getGiftCouponCodes);
+      }
+    };
+
+    getGiftCouponCodesDetails();
+  }, [address]);
+
   const giftCoupon = async () => {
     const couponContractInstance = await getContractInstance();
-    console.log(couponContractInstance);
+    // console.log(couponContractInstance);
     console.log("address", address);
     let getGiftCoupon = await couponContractInstance.methods
       .getGiftCouponDetails(couponCode)
@@ -35,7 +52,7 @@ const GetGiftCoupon = () => {
         }}
       >
         <div>
-          <h3>Gift coupon</h3>
+          <h3>Gift Coupon Details</h3>
           <div class="form-group">
             <label for="CouponCode">CouponCode:</label>
             <input
@@ -54,7 +71,7 @@ const GetGiftCoupon = () => {
             onClick={() => giftCoupon()}
           >
             {" "}
-            Get Gift Coupon{" "}
+            Get Gift Coupon Details{" "}
           </button>
         </div>
         <div className="container mt-5">
@@ -86,6 +103,14 @@ const GetGiftCoupon = () => {
               </div>
             </div>
           )}
+        </div>
+
+        <div className="container">
+          <div className="fs-5 fw-bold my-4">Get GiftCoupon Codes</div>
+          <div>
+            {giftCouponCodes &&
+              giftCouponCodes.map((code, i) => <p key={i}>{code}</p>)}
+          </div>
         </div>
       </div>
     </>
