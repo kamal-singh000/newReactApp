@@ -111,7 +111,7 @@ const GetGiftCoupon = () => {
             {giftCouponCodes &&
               giftCouponCodes.map((code, i) => (
                 <div
-                  className={`col-2 p-2 border ${
+                  className={`col-2 p-2 text-center border ${
                     i % 2 ? "bg-light text-dark" : "bg-dark text-light"
                   }`}
                   key={i}
