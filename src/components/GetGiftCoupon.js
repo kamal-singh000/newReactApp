@@ -105,11 +105,20 @@ const GetGiftCoupon = () => {
           )}
         </div>
 
-        <div className="container">
-          <div className="fs-5 fw-bold my-4">Get GiftCoupon Codes</div>
-          <div>
+        <div className="container my-5">
+          <div className="fs-5 fw-bold mb-2 ">Get GiftCoupon Codes</div>
+          <div className="row">
             {giftCouponCodes &&
-              giftCouponCodes.map((code, i) => <p key={i}>{code}</p>)}
+              giftCouponCodes.map((code, i) => (
+                <div
+                  className={`col-2 p-2 border ${
+                    i % 2 ? "bg-light text-dark" : "bg-dark text-light"
+                  }`}
+                  key={i}
+                >
+                  {code}
+                </div>
+              ))}
           </div>
         </div>
       </div>
