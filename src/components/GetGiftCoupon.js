@@ -57,30 +57,32 @@ const GetGiftCoupon = () => {
             Get Gift Coupon{" "}
           </button>
         </div>
-        <div className="container mt-4">
+        <div className="container mt-5">
           {getGiftCoupon && (
-            <div className="row">
+            <div className="row fs-5 border">
               <div className="col-6 p-0">
                 <p className="bg-secondary text-light px-3  m-0">title</p>
-                <p className=" px-3  m-0">cost</p>
+                <p className="bg-light px-3  m-0">cost</p>
                 <p className="bg-secondary text-light px-3  m-0">validity</p>
-                <p className=" px-3  m-0">code</p>
+                <p className="bg-light px-3  m-0">code</p>
                 <p className="bg-secondary text-light px-3  m-0">creator</p>
-                <p className=" px-3  m-0">redeemedBy</p>
+                <p className="bg-light px-3  m-0">redeemedBy</p>
               </div>
               <div className="col-6 p-0">
                 <p className="bg-secondary text-light px-3  m-0">
                   {getGiftCoupon?.title ? getGiftCoupon?.title : "No title"}
                 </p>
-                <p className=" px-3  m-0">{getGiftCoupon?.cost}</p>
+                <p className="bg-light px-3  m-0">{getGiftCoupon?.cost}</p>
                 <p className="bg-secondary text-light px-3  m-0">
                   {getGiftCoupon?.validity}
                 </p>
-                <p className=" px-3  m-0">{getGiftCoupon?.code}</p>
+                <p className="bg-light px-3  m-0">{getGiftCoupon?.code}</p>
                 <p className="bg-secondary text-light px-3  m-0">
                   {getGiftCoupon?.creator}
                 </p>
-                <p className=" px-3  m-0">{getGiftCoupon?.redeemedBy}</p>
+                <p className="bg-light px-3  m-0">
+                  {getGiftCoupon?.redeemedBy}
+                </p>
               </div>
             </div>
           )}

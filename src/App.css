@@ -17,7 +17,7 @@
   border-radius: 25px;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="number"],
 input[type="datetime-local"] {
   background-color: rgba(47, 47, 74, 0.4);
@@ -29,7 +29,7 @@ input[type="number"]:focus,
 input[type="datetime-local"]:focus {
   background-color: rgba(47, 47, 74, 0.8);
   color: rgb(183, 190, 195);
-}
+} */
 
 .loader {
   position: relative;
