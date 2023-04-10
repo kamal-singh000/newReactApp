@@ -76,7 +76,7 @@ const GetGiftCoupon = () => {
         </div>
         <div className="container mt-5">
           {getGiftCoupon && (
-            <div className="row fs-5 border">
+            <div className="row border">
               <div className="col-6 p-0">
                 <p className="bg-secondary text-light px-3  m-0">title</p>
                 <p className="bg-light px-3  m-0">cost</p>
